@@ -17,6 +17,8 @@
 		C099212B202A9740001DEF18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C099212A202A9740001DEF18 /* main.m */; };
 		C0992133202A982D001DEF18 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0992132202A982D001DEF18 /* ListTableViewController.m */; };
 		C0992136202A9852001DEF18 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0992135202A9852001DEF18 /* ListCell.m */; };
+		C0D1C2DD2043F12600680205 /* AngleGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C2DC2043F12600680205 /* AngleGradientLayer.m */; };
+		C0D1C2E02043F17100680205 /* UserControl6.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C2DF2043F17100680205 /* UserControl6.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		C0992132202A982D001DEF18 /* ListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 		C0992134202A9852001DEF18 /* ListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
 		C0992135202A9852001DEF18 /* ListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
+		C0D1C2DB2043F12600680205 /* AngleGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleGradientLayer.h; sourceTree = "<group>"; };
+		C0D1C2DC2043F12600680205 /* AngleGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleGradientLayer.m; sourceTree = "<group>"; };
+		C0D1C2DE2043F17000680205 /* UserControl6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserControl6.h; sourceTree = "<group>"; };
+		C0D1C2DF2043F17100680205 /* UserControl6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserControl6.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,10 @@
 		C099211A202A9740001DEF18 /* CoreAnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C0D1C2DB2043F12600680205 /* AngleGradientLayer.h */,
+				C0D1C2DC2043F12600680205 /* AngleGradientLayer.m */,
+				C0D1C2DE2043F17000680205 /* UserControl6.h */,
+				C0D1C2DF2043F17100680205 /* UserControl6.m */,
 				C066DA82202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.h */,
 				C066DA83202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.m */,
 				C066DA85202D716500933DFB /* CALayer+BorderGradientColor.h */,
@@ -171,7 +181,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C066DA81202C1E0100933DFB /* Case1Controller.m in Sources */,
+				C0D1C2DD2043F12600680205 /* AngleGradientLayer.m in Sources */,
 				C099212B202A9740001DEF18 /* main.m in Sources */,
+				C0D1C2E02043F17100680205 /* UserControl6.m in Sources */,
 				C099211D202A9740001DEF18 /* AppDelegate.m in Sources */,
 				C0992136202A9852001DEF18 /* ListCell.m in Sources */,
 				C066DA87202D716500933DFB /* CALayer+BorderGradientColor.m in Sources */,

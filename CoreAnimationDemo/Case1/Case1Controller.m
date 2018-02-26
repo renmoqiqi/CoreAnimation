@@ -9,6 +9,7 @@
 #import "Case1Controller.h"
 
 #import "CALayer+BorderGradientColor.h"
+#import "UserControl6.h"
 
 @interface Case1Controller ()
 @property (weak, nonatomic) IBOutlet UILabel *testLabel;
@@ -31,7 +32,7 @@
 {
     self.title = @"圆角";
 
-    [self testSix];
+    [self testNine];
 
 }
 
@@ -142,6 +143,89 @@
     self.testLabel.layer.backgroundColor = [UIColor grayColor].CGColor;
     [self.testLabel.layer addGradienBorder:@[(id)[UIColor redColor].CGColor, (id)[UIColor blueColor].CGColor] borderWidth:5];
 
+}
+
+//填充颜色线性渐变
+- (void)testSeven
+{
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.colors = @[(__bridge id)[UIColor redColor].CGColor, (__bridge id)[UIColor yellowColor].CGColor, (__bridge id)[UIColor blueColor].CGColor];
+    gradientLayer.locations = @[@0.3, @0.5, @1.0];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1.0, 0);
+    gradientLayer.frame = CGRectMake(0, 100, 300, 100);
+    [self.testLabel.layer addSublayer:gradientLayer];
+    
+
+}
+
+//颜色径向渐变
+- (void)testEnght
+{
+    //创建CGContextRef
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    CGContextRef gc = UIGraphicsGetCurrentContext();
+    
+    //创建CGMutablePathRef
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    //绘制Path
+    CGRect rect = CGRectMake(0, 100, 300, 200);
+    CGPathMoveToPoint(path, NULL, CGRectGetMinX(rect), CGRectGetMinY(rect));
+    CGPathAddLineToPoint(path, NULL, CGRectGetMinX(rect), CGRectGetMaxY(rect));
+    CGPathAddLineToPoint(path, NULL, CGRectGetWidth(rect), CGRectGetMaxY(rect));
+    CGPathAddLineToPoint(path, NULL, CGRectGetWidth(rect), CGRectGetMinY(rect));
+    CGPathCloseSubpath(path);
+
+    //绘制渐变
+    [self drawRadialGradient:gc path:path startColor:[UIColor greenColor].CGColor endColor:[UIColor redColor].CGColor];
+    
+    //注意释放CGMutablePathRef
+    CGPathRelease(path);
+    
+    //从Context中获取图像，并显示在界面上
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:img];
+    [self.view addSubview:imgView];
+
+}
+//绘制线性渐变
+- (void)drawRadialGradient:(CGContextRef)context
+                      path:(CGPathRef)path
+                startColor:(CGColorRef)startColor
+                  endColor:(CGColorRef)endColor
+{
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGFloat locations[] = { 0.0, 1.0 };
+    
+    NSArray *colors = @[(__bridge id) startColor, (__bridge id) endColor];
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef) colors, locations);
+    
+    
+    CGRect pathRect = CGPathGetBoundingBox(path);
+    CGPoint center = CGPointMake(CGRectGetMidX(pathRect), CGRectGetMidY(pathRect));
+    CGFloat radius = MAX(pathRect.size.width / 2.0, pathRect.size.height / 2.0) * sqrt(2);
+    
+    CGContextSaveGState(context);
+    CGContextAddPath(context, path);
+    CGContextEOClip(context);
+    
+    CGContextDrawRadialGradient(context, gradient, center, 0, center, radius, 0);
+    
+    CGContextRestoreGState(context);
+    
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorSpace);
+}
+
+//填充色环形渐变
+- (void)testNine
+{
+    UserControl6 *uc6 = [[UserControl6 alloc] initWithFrame:CGRectMake(-10, 225, 135, 135)];
+    [self.view addSubview:uc6];
 }
 
 
