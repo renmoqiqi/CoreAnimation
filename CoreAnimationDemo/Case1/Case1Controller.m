@@ -30,9 +30,8 @@
 
 - (void)setupViews
 {
-    self.title = @"圆角";
 
-    [self testNine];
+    [self testThree];
 
 }
 
@@ -111,7 +110,7 @@
 
 }
 
-//CAShapeLayer结合贝塞尔曲线 设置圆角
+//CAShapeLayer结合贝塞尔曲线 设置圆角 牵扯到一些边框的问题
 - (void)testFive {
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 50, 100, 100) byRoundingCorners:UIRectCornerTopRight cornerRadii:CGSizeMake(20, 20)];
@@ -128,7 +127,11 @@
     polygon.lineJoin = kCALineJoinRound;
     //lineCap：线端点类型有三种情况
     polygon.lineCap = kCALineCapSquare;
-
+//    //描述path路径从哪里开始
+//    @property CGFloat strokeStart;
+//    //描述path路径从哪里结束
+//    @property CGFloat strokeEnd;
+//    这两个值的范围是[0,1]，
 }
 
 //border 渐变
@@ -228,5 +231,52 @@
     [self.view addSubview:uc6];
 }
 
+//阴影
+- (void)testTen
+{
+    //设置layer 的背景色
+    self.testLabel.layer.backgroundColor = [UIColor redColor].CGColor;
+    //透明度
+    self.testLabel.layer.shadowOpacity = 0.3;
+    //类似sketch的 X，Y偏移
+    self.testLabel.layer.shadowOffset  = CGSizeMake(1, 6);
+    //模糊度
+    self.testLabel.layer.shadowRadius  = 6;
+
+}
+
+//一个综合的例子 圆角 悬浮 阴影
+- (void)testEleven
+{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    //用贝塞尔曲线画一个圆角矩形
+    UIBezierPath * roundedRectPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, 58, 47) cornerRadius:10];
+    //当做CAShapeLayer的路径
+    CAShapeLayer * roundedRect = [CAShapeLayer layer];
+    roundedRect.frame                      = CGRectMake(26.5, 29.5, 57.93, 46.74);
+    roundedRect.fillColor                  = nil;
+    //border颜色
+    roundedRect.strokeColor                = [UIColor colorWithRed:0.937 green: 0.216 blue:0.18 alpha:1].CGColor;
+    roundedRect.lineWidth                  = 5;
+    //阴影
+    roundedRect.shadowColor                = [UIColor colorWithRed:0 green: 0 blue:0 alpha:0.596].CGColor;
+    roundedRect.shadowOpacity = 0.6;
+    roundedRect.shadowOffset  = CGSizeMake(4, 4);
+    roundedRect.shadowRadius  = 5;
+    roundedRect.path                       = roundedRectPath.CGPath;
+    //渐变
+    CAGradientLayer * roundedRectGradient = [CAGradientLayer layer];
+    //用上层圆角矩形作为蒙版
+    CAShapeLayer * roundedRectMask         = [CAShapeLayer layer];
+    roundedRectMask.path                   = roundedRect.path;
+    roundedRectGradient.mask               = roundedRectMask;
+    roundedRectGradient.frame              = roundedRect.bounds;
+    roundedRectGradient.colors             = @[(id)[UIColor colorWithRed:0.608 green: 0.937 blue:0.451 alpha:1].CGColor, (id)[UIColor colorWithRed:1 green: 1 blue:1 alpha:1].CGColor];
+    roundedRectGradient.startPoint         = CGPointMake(0.054, 0.094);
+    roundedRectGradient.endPoint           = CGPointMake(0.963, 0.969);
+    //注意层级关系
+    [roundedRect addSublayer:roundedRectGradient];
+    [self.view.layer addSublayer:roundedRect];
+}
 
 @end

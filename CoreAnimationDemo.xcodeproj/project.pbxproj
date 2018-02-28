@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		C066DA81202C1E0100933DFB /* Case1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = C066DA80202C1E0100933DFB /* Case1Controller.m */; };
-		C066DA84202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = C066DA83202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.m */; };
-		C066DA87202D716500933DFB /* CALayer+BorderGradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C066DA86202D716500933DFB /* CALayer+BorderGradientColor.m */; };
+		C08E27802046660200DEB36E /* UserControl6.m in Sources */ = {isa = PBXBuildFile; fileRef = C08E27782046660200DEB36E /* UserControl6.m */; };
+		C08E27812046660200DEB36E /* UIBezierPath+IOS7RoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = C08E277B2046660200DEB36E /* UIBezierPath+IOS7RoundedRect.m */; };
+		C08E27822046660200DEB36E /* CALayer+BorderGradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C08E277C2046660200DEB36E /* CALayer+BorderGradientColor.m */; };
+		C08E27832046660200DEB36E /* AngleGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C08E277D2046660200DEB36E /* AngleGradientLayer.m */; };
+		C08E2787204688A700DEB36E /* Case2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = C08E2786204688A700DEB36E /* Case2Controller.m */; };
+		C08E278C20469CA300DEB36E /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = C08E278820469CA300DEB36E /* CustomView.m */; };
+		C08E278D20469CA300DEB36E /* QCMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = C08E278B20469CA300DEB36E /* QCMethod.m */; };
 		C099211D202A9740001DEF18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C099211C202A9740001DEF18 /* AppDelegate.m */; };
 		C0992123202A9740001DEF18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0992121202A9740001DEF18 /* Main.storyboard */; };
 		C0992125202A9740001DEF18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0992124202A9740001DEF18 /* Assets.xcassets */; };
@@ -17,17 +22,25 @@
 		C099212B202A9740001DEF18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C099212A202A9740001DEF18 /* main.m */; };
 		C0992133202A982D001DEF18 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0992132202A982D001DEF18 /* ListTableViewController.m */; };
 		C0992136202A9852001DEF18 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0992135202A9852001DEF18 /* ListCell.m */; };
-		C0D1C2DD2043F12600680205 /* AngleGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C2DC2043F12600680205 /* AngleGradientLayer.m */; };
-		C0D1C2E02043F17100680205 /* UserControl6.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D1C2DF2043F17100680205 /* UserControl6.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C066DA7F202C1E0100933DFB /* Case1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Case1Controller.h; sourceTree = "<group>"; };
 		C066DA80202C1E0100933DFB /* Case1Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Case1Controller.m; sourceTree = "<group>"; };
-		C066DA82202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+IOS7RoundedRect.h"; sourceTree = "<group>"; };
-		C066DA83202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+IOS7RoundedRect.m"; sourceTree = "<group>"; };
-		C066DA85202D716500933DFB /* CALayer+BorderGradientColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+BorderGradientColor.h"; sourceTree = "<group>"; };
-		C066DA86202D716500933DFB /* CALayer+BorderGradientColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BorderGradientColor.m"; sourceTree = "<group>"; };
+		C08E27782046660200DEB36E /* UserControl6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserControl6.m; sourceTree = "<group>"; };
+		C08E27792046660200DEB36E /* UIBezierPath+IOS7RoundedRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+IOS7RoundedRect.h"; sourceTree = "<group>"; };
+		C08E277A2046660200DEB36E /* CALayer+BorderGradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+BorderGradientColor.h"; sourceTree = "<group>"; };
+		C08E277B2046660200DEB36E /* UIBezierPath+IOS7RoundedRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+IOS7RoundedRect.m"; sourceTree = "<group>"; };
+		C08E277C2046660200DEB36E /* CALayer+BorderGradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+BorderGradientColor.m"; sourceTree = "<group>"; };
+		C08E277D2046660200DEB36E /* AngleGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleGradientLayer.m; sourceTree = "<group>"; };
+		C08E277E2046660200DEB36E /* AngleGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleGradientLayer.h; sourceTree = "<group>"; };
+		C08E277F2046660200DEB36E /* UserControl6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserControl6.h; sourceTree = "<group>"; };
+		C08E2785204688A700DEB36E /* Case2Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Case2Controller.h; sourceTree = "<group>"; };
+		C08E2786204688A700DEB36E /* Case2Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Case2Controller.m; sourceTree = "<group>"; };
+		C08E278820469CA300DEB36E /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		C08E278920469CA300DEB36E /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
+		C08E278A20469CA300DEB36E /* QCMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCMethod.h; sourceTree = "<group>"; };
+		C08E278B20469CA300DEB36E /* QCMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCMethod.m; sourceTree = "<group>"; };
 		C0992118202A9740001DEF18 /* CoreAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C099211B202A9740001DEF18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C099211C202A9740001DEF18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,10 +53,6 @@
 		C0992132202A982D001DEF18 /* ListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 		C0992134202A9852001DEF18 /* ListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
 		C0992135202A9852001DEF18 /* ListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
-		C0D1C2DB2043F12600680205 /* AngleGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleGradientLayer.h; sourceTree = "<group>"; };
-		C0D1C2DC2043F12600680205 /* AngleGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleGradientLayer.m; sourceTree = "<group>"; };
-		C0D1C2DE2043F17000680205 /* UserControl6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserControl6.h; sourceTree = "<group>"; };
-		C0D1C2DF2043F17100680205 /* UserControl6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserControl6.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +69,31 @@
 		C066DA7E202C1DE500933DFB /* Case1 */ = {
 			isa = PBXGroup;
 			children = (
+				C08E277E2046660200DEB36E /* AngleGradientLayer.h */,
+				C08E277D2046660200DEB36E /* AngleGradientLayer.m */,
+				C08E277A2046660200DEB36E /* CALayer+BorderGradientColor.h */,
+				C08E277C2046660200DEB36E /* CALayer+BorderGradientColor.m */,
+				C08E27792046660200DEB36E /* UIBezierPath+IOS7RoundedRect.h */,
+				C08E277B2046660200DEB36E /* UIBezierPath+IOS7RoundedRect.m */,
+				C08E277F2046660200DEB36E /* UserControl6.h */,
+				C08E27782046660200DEB36E /* UserControl6.m */,
 				C066DA7F202C1E0100933DFB /* Case1Controller.h */,
 				C066DA80202C1E0100933DFB /* Case1Controller.m */,
 			);
 			path = Case1;
+			sourceTree = "<group>";
+		};
+		C08E27842046888700DEB36E /* Case2 */ = {
+			isa = PBXGroup;
+			children = (
+				C08E278920469CA300DEB36E /* CustomView.h */,
+				C08E278820469CA300DEB36E /* CustomView.m */,
+				C08E278A20469CA300DEB36E /* QCMethod.h */,
+				C08E278B20469CA300DEB36E /* QCMethod.m */,
+				C08E2785204688A700DEB36E /* Case2Controller.h */,
+				C08E2786204688A700DEB36E /* Case2Controller.m */,
+			);
+			path = Case2;
 			sourceTree = "<group>";
 		};
 		C099210F202A9740001DEF18 = {
@@ -85,14 +115,7 @@
 		C099211A202A9740001DEF18 /* CoreAnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C0D1C2DB2043F12600680205 /* AngleGradientLayer.h */,
-				C0D1C2DC2043F12600680205 /* AngleGradientLayer.m */,
-				C0D1C2DE2043F17000680205 /* UserControl6.h */,
-				C0D1C2DF2043F17100680205 /* UserControl6.m */,
-				C066DA82202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.h */,
-				C066DA83202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.m */,
-				C066DA85202D716500933DFB /* CALayer+BorderGradientColor.h */,
-				C066DA86202D716500933DFB /* CALayer+BorderGradientColor.m */,
+				C08E27842046888700DEB36E /* Case2 */,
 				C099211B202A9740001DEF18 /* AppDelegate.h */,
 				C099211C202A9740001DEF18 /* AppDelegate.m */,
 				C0992131202A982D001DEF18 /* ListTableViewController.h */,
@@ -181,14 +204,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C066DA81202C1E0100933DFB /* Case1Controller.m in Sources */,
-				C0D1C2DD2043F12600680205 /* AngleGradientLayer.m in Sources */,
 				C099212B202A9740001DEF18 /* main.m in Sources */,
-				C0D1C2E02043F17100680205 /* UserControl6.m in Sources */,
+				C08E278D20469CA300DEB36E /* QCMethod.m in Sources */,
+				C08E278C20469CA300DEB36E /* CustomView.m in Sources */,
+				C08E27812046660200DEB36E /* UIBezierPath+IOS7RoundedRect.m in Sources */,
 				C099211D202A9740001DEF18 /* AppDelegate.m in Sources */,
+				C08E27802046660200DEB36E /* UserControl6.m in Sources */,
 				C0992136202A9852001DEF18 /* ListCell.m in Sources */,
-				C066DA87202D716500933DFB /* CALayer+BorderGradientColor.m in Sources */,
 				C0992133202A982D001DEF18 /* ListTableViewController.m in Sources */,
-				C066DA84202C48D600933DFB /* UIBezierPath+IOS7RoundedRect.m in Sources */,
+				C08E27832046660200DEB36E /* AngleGradientLayer.m in Sources */,
+				C08E2787204688A700DEB36E /* Case2Controller.m in Sources */,
+				C08E27822046660200DEB36E /* CALayer+BorderGradientColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
