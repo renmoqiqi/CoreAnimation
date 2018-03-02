@@ -41,7 +41,9 @@
     shapeLayer.path = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
     shapeLayer.fillColor = nil;
     shapeLayer.strokeColor = [UIColor blackColor].CGColor;
+    
     gradientLayer.mask = shapeLayer;
+    
     [self addSublayer:gradientLayer];
     
 }

@@ -30,13 +30,12 @@
 
 - (void)setupViews
 {
-
-    [self testThree];
+    [self test13];
 
 }
 
 //圆角属性cornerRadius只是影响了当前层的背景色或者border
-- (void)testOne
+- (void)test1
 {
     self.testLabel.layer.backgroundColor = [UIColor redColor].CGColor;
     self.testLabel.layer.cornerRadius = 15;
@@ -45,7 +44,7 @@
 }
 
 //圆角属性cornerRadius不影响子图层
-- (void)testTow
+- (void)test2
 {
     self.testLabel.layer.backgroundColor = [UIColor redColor].CGColor;
     self.testLabel.layer.cornerRadius = 15;
@@ -63,7 +62,7 @@
 }
 
 //圆角属性cornerRadius不影响当前层的背景图片
-- (void)testThree
+- (void)test3
 {
     self.testLabel.layer.cornerRadius = 15;
     self.testLabel.layer.borderColor = [UIColor blueColor].CGColor;
@@ -81,11 +80,10 @@
     self.testLabel.layer.borderColor = [UIColor blueColor].CGColor;
     self.testLabel.layer.borderWidth = 2;
 
-
 }
 
 //设置某个为圆角
-- (void)testFour
+- (void)test4
 {
     self.testLabel.layer.backgroundColor = [UIColor redColor].CGColor;
  
@@ -111,7 +109,7 @@
 }
 
 //CAShapeLayer结合贝塞尔曲线 设置圆角 牵扯到一些边框的问题
-- (void)testFive {
+- (void)test5 {
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(50, 50, 100, 100) byRoundingCorners:UIRectCornerTopRight cornerRadii:CGSizeMake(20, 20)];
 
@@ -135,7 +133,7 @@
 }
 
 //border 渐变
-- (void)testSix
+- (void)test6
 {
     //不能用视图的背景色这样不会显示边框， masksToBounds和cornerRadius属性在一起会剪裁边框
 //    self.testLabel.layer.cornerRadius = 5;
@@ -149,7 +147,7 @@
 }
 
 //填充颜色线性渐变
-- (void)testSeven
+- (void)test7
 {
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.colors = @[(__bridge id)[UIColor redColor].CGColor, (__bridge id)[UIColor yellowColor].CGColor, (__bridge id)[UIColor blueColor].CGColor];
@@ -163,7 +161,7 @@
 }
 
 //颜色径向渐变
-- (void)testEnght
+- (void)test8
 {
     //创建CGContextRef
     UIGraphicsBeginImageContext(self.view.bounds.size);
@@ -225,14 +223,14 @@
 }
 
 //填充色环形渐变
-- (void)testNine
+- (void)test9
 {
     UserControl6 *uc6 = [[UserControl6 alloc] initWithFrame:CGRectMake(-10, 225, 135, 135)];
     [self.view addSubview:uc6];
 }
 
 //阴影
-- (void)testTen
+- (void)test10
 {
     //设置layer 的背景色
     self.testLabel.layer.backgroundColor = [UIColor redColor].CGColor;
@@ -246,7 +244,7 @@
 }
 
 //一个综合的例子 圆角 悬浮 阴影
-- (void)testEleven
+- (void)test11
 {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     //用贝塞尔曲线画一个圆角矩形
@@ -279,4 +277,78 @@
     [self.view.layer addSublayer:roundedRect];
 }
 
+//strokeStart strokeEnd简介
+- (void)test12
+{
+    UIBezierPath *rectanglePath = [UIBezierPath bezierPath];
+    
+    //strokeStart strokeEnd 开始的位置和贝塞尔曲线moveToPoint 开始的点的位置有关 逆时针方向
+    [rectanglePath moveToPoint:CGPointMake(0, 177)];
+    [rectanglePath addLineToPoint:CGPointMake(185, 177)];
+    [rectanglePath addLineToPoint:CGPointMake(185, 0)];
+    [rectanglePath addLineToPoint:CGPointMake(0, 0)];
+    [rectanglePath addLineToPoint:CGPointMake(0, 177)];
+    [rectanglePath closePath];
+    
+//    [rectanglePath moveToPoint:CGPointMake(185, 177)];
+//    [rectanglePath addLineToPoint:CGPointMake(185, 0)];
+//    [rectanglePath addLineToPoint:CGPointMake(0, 0)];
+//    [rectanglePath addLineToPoint:CGPointMake(0, 177)];
+//    [rectanglePath addLineToPoint:CGPointMake(185, 177)];
+//    [rectanglePath closePath];
+
+    CAShapeLayer * rectangle = [CAShapeLayer layer];
+    rectangle.frame       = CGRectMake(83, 206, 185, 177);
+    rectangle.fillColor   = [UIColor colorWithRed:0.937 green: 0.431 blue:0.268 alpha:1].CGColor;
+    rectangle.strokeColor = [UIColor colorWithRed:0.129 green: 0.151 blue:0.404 alpha:1].CGColor;
+    rectangle.lineWidth   = 8;
+    rectangle.strokeStart = 0.4;
+    rectangle.strokeEnd   = 1;
+    rectangle.path        = rectanglePath.CGPath;
+    [self.view.layer addSublayer:rectangle];
+}
+
+//用动画解释下strokeStart strokeEnd属性作用的过程
+- (void)test13
+{
+    //这里只要你画出一个图形就可以动画慢慢生成你想用的图形 比如一个艺术字 一个苹果的logo
+    UIBezierPath *rectanglePath = [UIBezierPath bezierPath];
+    
+    //strokeStart strokeEnd 开始的位置和贝塞尔曲线moveToPoint 开始的点的位置有关 逆时针方向
+    //    [rectanglePath moveToPoint:CGPointMake(0, 177)];
+    //    [rectanglePath addLineToPoint:CGPointMake(185, 177)];
+    //    [rectanglePath addLineToPoint:CGPointMake(185, 0)];
+    //    [rectanglePath addLineToPoint:CGPointMake(0, 0)];
+    //    [rectanglePath addLineToPoint:CGPointMake(0, 177)];
+    //    [rectanglePath closePath];
+    
+    [rectanglePath moveToPoint:CGPointMake(185, 177)];
+    [rectanglePath addLineToPoint:CGPointMake(185, 0)];
+    [rectanglePath addLineToPoint:CGPointMake(0, 0)];
+    [rectanglePath addLineToPoint:CGPointMake(0, 177)];
+    [rectanglePath addLineToPoint:CGPointMake(185, 177)];
+    [rectanglePath closePath];
+    
+    CAShapeLayer * rectangle = [CAShapeLayer layer];
+    rectangle.frame       = CGRectMake(83, 206, 185, 177);
+    rectangle.fillColor   = [UIColor colorWithRed:0.937 green: 0.431 blue:0.268 alpha:1].CGColor;
+    rectangle.strokeColor = [UIColor colorWithRed:0.129 green: 0.151 blue:0.404 alpha:1].CGColor;
+    rectangle.lineWidth   = 8;
+    rectangle.strokeStart = 0;
+    rectangle.strokeEnd   = 1;
+    rectangle.path        = rectanglePath.CGPath;
+    [self.view.layer addSublayer:rectangle];
+    
+    //做动画
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    
+    animation.fromValue = [NSNumber numberWithFloat:0];
+    animation.toValue = [NSNumber numberWithFloat:1];
+    animation.duration = 1.5;
+    
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = false;
+    
+    [rectangle addAnimation:animation forKey:@"drawLineAnimation"];
+}
 @end
